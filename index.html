@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>雨青屋 v0.1</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#2a4e4a">
+  <!-- iOS PWA 优化（可选） -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="brand">雨青屋</div>
+      <nav class="tabs">
+        <button data-view="hearth" class="tab is-active">炉火厅</button>
+        <button data-view="veranda" class="tab">廊下看雨</button>
+        <button data-view="study" class="tab">书桌窗边</button>
+        <button data-view="backhill" class="tab">后山采蘑菇</button>
+        <button data-view="river" class="tab">溪桥小石滩</button>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="菜单">☰</button>
+    </header>
+
+    <main id="scene" class="scene"></main>
+
+    <!-- 右侧抽屉 -->
+    <aside id="drawer" class="drawer" aria-label="侧边菜单">
+      <button id="closeDrawer" class="close" aria-label="关闭">×</button>
+      <h3>同住者</h3>
+      <ul class="chars">
+        <li data-char="girl">蓝裙子的女孩</li>
+        <li data-char="knight">女侠</li>
+        <li data-char="rebel">反抗者</li>
+        <li data-char="scribe">书写者</li>
+        <li data-char="friend">长明友</li>
+      </ul>
+      <hr>
+      <h3>小功能</h3>
+      <button id="breathBtn">山心息·呼吸</button>
+      <button id="logBtn">心情手记</button>
+      <button id="resetBtn">清空今日烟火</button>
+      <p class="tip">数据保存在你的浏览器本地（可离线）。</p>
+    </aside>
+
+    <!-- 弹窗 -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <button id="modalClose" class="modal-close" aria-label="关闭弹窗">×</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
